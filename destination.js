@@ -19,7 +19,7 @@ const destinationDistance = document.querySelector(
 const destinationTime = document.querySelector(".mainContainerDest__time span");
 
 let http = new XMLHttpRequest();
-http.open("get", "../destinations.json", true);
+http.open("get", "destinations.json", true);
 http.send();
 http.onload = function () {
   if (this.readyState == 4 && this.status == 200) {
