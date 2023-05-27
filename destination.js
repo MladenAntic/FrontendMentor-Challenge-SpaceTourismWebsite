@@ -17,21 +17,17 @@ const destinationDistance = document.querySelector(
   ".mainContainerDest__distance span"
 );
 const destinationTime = document.querySelector(".mainContainerDest__time span");
-let dataDest = [];
 
-fetch("../data/destinations.json")
+fetch("data.json")
   .then((res) => res.json())
   .then((data) => {
     for (let i = 0; i < destinations.length; i++) {
-      dataDest.push(data.destinations[i]);
-    }
-    for (let i = 0; i < destinations.length; i++) {
       destinations[i].addEventListener("click", () => {
-        destinationImage.src = `${dataDest[i].images.png}`;
-        destinationTitle.innerText = `${dataDest[i].name}`;
-        destinationDescription.innerText = `${dataDest[i].description}`;
-        destinationDistance.innerText = `${dataDest[i].distance}`;
-        destinationTime.innerText = `${dataDest[i].travel}`;
+        destinationImage.src = `${data.destinations[i].images.png}`;
+        destinationTitle.innerText = `${data.destinations[i].name}`;
+        destinationDescription.innerText = `${data.destinations[i].description}`;
+        destinationDistance.innerText = `${data.destinations[i].distance}`;
+        destinationTime.innerText = `${data.destinations[i].travel}`;
 
         animateContentDest();
       });

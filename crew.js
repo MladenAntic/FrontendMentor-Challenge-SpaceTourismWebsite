@@ -8,20 +8,16 @@ const crewDescription = document.querySelector(
   ".mainContainerCrew__description"
 );
 const crewImage = document.getElementById("crewMemberImg");
-const dataCrew = [];
 
-fetch("../data/crew.json")
+fetch("data.json")
   .then((res) => res.json())
   .then((data) => {
     for (let i = 0; i < crewButtons.length; i++) {
-      dataCrew.push(data.crew[i]);
-    }
-    for (let i = 0; i < crewButtons.length; i++) {
       crewButtons[i].addEventListener("click", () => {
-        crewPosition.innerText = `${dataCrew[i].role}`;
-        crewName.innerText = `${dataCrew[i].name}`;
-        crewDescription.innerText = `${dataCrew[i].bio}`;
-        crewImage.src = `${dataCrew[i].images.png}`;
+        crewPosition.innerText = `${data.crew[i].role}`;
+        crewName.innerText = `${data.crew[i].name}`;
+        crewDescription.innerText = `${data.crew[i].bio}`;
+        crewImage.src = `${data.crew[i].images.png}`;
 
         animateContentCrew();
       });

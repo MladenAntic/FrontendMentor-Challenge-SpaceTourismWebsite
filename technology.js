@@ -4,7 +4,6 @@ const technologyDescription = document.querySelector(
   ".mainContainerTech__description"
 );
 const technologyImage = document.getElementById("technologyImg");
-let dataTech = [];
 
 function changeFirstImg() {
   if (window.innerWidth <= 992) {
@@ -20,23 +19,20 @@ changeFirstImg();
 
 window.addEventListener("resize", changeFirstImg);
 
-fetch("../data/technology.json")
+fetch("./data.json")
   .then((res) => res.json())
   .then((data) => {
     for (let i = 0; i < steps.length; i++) {
-      dataTech.push(data.technology[i]);
-    }
-    for (let i = 0; i < steps.length; i++) {
       function changeImg() {
         if (window.innerWidth <= 992) {
-          technologyImage.src = `${dataTech[i].images.landscape}`;
+          technologyImage.src = `${data.technology[i].images.landscape}`;
         } else if (window.innerWidth > 992) {
-          technologyImage.src = `${dataTech[i].images.portrait}`;
+          technologyImage.src = `${data.technology[i].images.portrait}`;
         }
       }
       steps[i].addEventListener("click", () => {
-        technologyName.innerText = `${dataTech[i].name}`;
-        technologyDescription.innerText = `${dataTech[i].description}`;
+        technologyName.innerText = `${data.technology[i].name}`;
+        technologyDescription.innerText = `${data.technology[i].description}`;
 
         changeImg();
         window.addEventListener("resize", changeImg);
