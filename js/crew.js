@@ -10,7 +10,7 @@ const crewDescription = document.querySelector(
 const crewImage = document.getElementById("crewMemberImg");
 
 let http = new XMLHttpRequest();
-http.open("get", "../data/crew.json", true);
+http.open("get", "../crew.json", true);
 http.send();
 http.onload = function () {
   if (this.readyState == 4 && this.status == 200) {

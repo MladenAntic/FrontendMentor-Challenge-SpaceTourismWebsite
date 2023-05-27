@@ -20,7 +20,7 @@ changeFirstImg();
 window.addEventListener("resize", changeFirstImg);
 
 let http = new XMLHttpRequest();
-http.open("get", "../data/technology.json", true);
+http.open("get", "../technology.json", true);
 http.send();
 http.onload = function () {
   if (this.readyState == 4 && this.status == 200) {
