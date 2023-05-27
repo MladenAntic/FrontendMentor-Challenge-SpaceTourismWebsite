@@ -4,6 +4,7 @@ const technologyDescription = document.querySelector(
   ".mainContainerTech__description"
 );
 const technologyImage = document.getElementById("technologyImg");
+let dataTech = [];
 
 function changeFirstImg() {
   if (window.innerWidth <= 992) {
@@ -19,23 +20,23 @@ changeFirstImg();
 
 window.addEventListener("resize", changeFirstImg);
 
-let http = new XMLHttpRequest();
-http.open("get", "../data/technology.json", true);
-http.send();
-http.onload = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    let dataTech = JSON.parse(this.responseText);
+fetch("../data/technology.json")
+  .then((res) => res.json())
+  .then((data) => {
+    for (let i = 0; i < steps.length; i++) {
+      dataTech.push(data.technology[i]);
+    }
     for (let i = 0; i < steps.length; i++) {
       function changeImg() {
         if (window.innerWidth <= 992) {
-          technologyImage.src = `${dataTech.technology[i].images.landscape}`;
+          technologyImage.src = `${dataTech[i].images.landscape}`;
         } else if (window.innerWidth > 992) {
-          technologyImage.src = `${dataTech.technology[i].images.portrait}`;
+          technologyImage.src = `${dataTech[i].images.portrait}`;
         }
       }
       steps[i].addEventListener("click", () => {
-        technologyName.innerText = `${dataTech.technology[i].name}`;
-        technologyDescription.innerText = `${dataTech.technology[i].description}`;
+        technologyName.innerText = `${dataTech[i].name}`;
+        technologyDescription.innerText = `${dataTech[i].description}`;
 
         changeImg();
         window.addEventListener("resize", changeImg);
@@ -43,8 +44,7 @@ http.onload = function () {
         animateContentTech();
       });
     }
-  }
-};
+  });
 
 function animateContentTech() {
   technologyName.className = "mainContainerTech__name";

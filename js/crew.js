@@ -8,25 +8,25 @@ const crewDescription = document.querySelector(
   ".mainContainerCrew__description"
 );
 const crewImage = document.getElementById("crewMemberImg");
+const dataCrew = [];
 
-let http = new XMLHttpRequest();
-http.open("get", "../data/crew.json", true);
-http.send();
-http.onload = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    let dataCrew = JSON.parse(this.responseText);
+fetch("../data/crew.json")
+  .then((res) => res.json())
+  .then((data) => {
+    for (let i = 0; i < crewButtons.length; i++) {
+      dataCrew.push(data.crew[i]);
+    }
     for (let i = 0; i < crewButtons.length; i++) {
       crewButtons[i].addEventListener("click", () => {
-        crewPosition.innerText = `${dataCrew.crew[i].role}`;
-        crewName.innerText = `${dataCrew.crew[i].name}`;
-        crewDescription.innerText = `${dataCrew.crew[i].bio}`;
-        crewImage.src = `${dataCrew.crew[i].images.png}`;
+        crewPosition.innerText = `${dataCrew[i].role}`;
+        crewName.innerText = `${dataCrew[i].name}`;
+        crewDescription.innerText = `${dataCrew[i].bio}`;
+        crewImage.src = `${dataCrew[i].images.png}`;
 
         animateContentCrew();
       });
     }
-  }
-};
+  });
 
 function animateContentCrew() {
   crewImage.className = "";

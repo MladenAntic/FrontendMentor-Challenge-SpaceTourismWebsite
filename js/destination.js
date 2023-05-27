@@ -17,26 +17,26 @@ const destinationDistance = document.querySelector(
   ".mainContainerDest__distance span"
 );
 const destinationTime = document.querySelector(".mainContainerDest__time span");
+let dataDest = [];
 
-let http = new XMLHttpRequest();
-http.open("get", "../data/destinations.json", true);
-http.send();
-http.onload = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    let dataDest = JSON.parse(this.responseText);
+fetch("../data/destinations.json")
+  .then((res) => res.json())
+  .then((data) => {
+    for (let i = 0; i < destinations.length; i++) {
+      dataDest.push(data.destinations[i]);
+    }
     for (let i = 0; i < destinations.length; i++) {
       destinations[i].addEventListener("click", () => {
-        destinationImage.src = `${dataDest.destinations[i].images.png}`;
-        destinationTitle.innerText = `${dataDest.destinations[i].name}`;
-        destinationDescription.innerText = `${dataDest.destinations[i].description}`;
-        destinationDistance.innerText = `${dataDest.destinations[i].distance}`;
-        destinationTime.innerText = `${dataDest.destinations[i].travel}`;
+        destinationImage.src = `${dataDest[i].images.png}`;
+        destinationTitle.innerText = `${dataDest[i].name}`;
+        destinationDescription.innerText = `${dataDest[i].description}`;
+        destinationDistance.innerText = `${dataDest[i].distance}`;
+        destinationTime.innerText = `${dataDest[i].travel}`;
 
         animateContentDest();
       });
     }
-  }
-};
+  });
 
 function animateContentDest() {
   destinationNumber.className = "mainContainerDest__destinationNumber";
