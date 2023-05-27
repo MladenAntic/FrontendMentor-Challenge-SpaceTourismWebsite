@@ -9,6 +9,8 @@ const crewDescription = document.querySelector(
 );
 const crewImage = document.getElementById("crewMemberImg");
 
+import data from '../data/crew.json' assert { type: 'json' };
+
 fetch("../data/crew.json")
   .then((res) => res.json())
   .then((data) => {

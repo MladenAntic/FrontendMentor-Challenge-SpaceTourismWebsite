@@ -19,6 +19,8 @@ changeFirstImg()
 
 window.addEventListener("resize", changeFirstImg);
 
+import data from '../data/technology.json' assert { type: 'json' };
+
 fetch("../data/technology.json")
   .then((res) => res.json())
   .then((data) => {

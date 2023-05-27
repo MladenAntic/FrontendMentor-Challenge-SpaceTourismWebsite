@@ -18,6 +18,8 @@ const destinationDistance = document.querySelector(
 );
 const destinationTime = document.querySelector(".mainContainerDest__time span");
 
+import data from '../data/destinations.json' assert { type: 'json' };
+
 fetch("../data/destinations.json")
   .then((res) => res.json())
   .then((data) => {
