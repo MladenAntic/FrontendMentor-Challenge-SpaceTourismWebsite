@@ -1,0 +1,185 @@
+body {
+  height: 100vh;
+  position: relative;
+
+  #crewMemberImg {
+    width: 28.125rem;
+    position: fixed;
+    right: 10%;
+    bottom: 0;
+
+    @media screen and (max-width: 75rem) {
+      right: 0;
+    }
+
+    @media screen and (max-width: 62rem) {
+      width: 21.875rem;
+    }
+
+    @media screen and (max-width: 48rem) {
+      width: 15.625rem;
+      right: unset;
+      left: 50%;
+      transform: translateX(-50%) !important;
+    }
+  }
+}
+
+#backgroundCrew {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("../assets/crew/background-crew-desktop.jpg") no-repeat center
+    center/cover;
+  background-attachment: fixed;
+  z-index: -10;
+
+  @media screen and (max-width: 62rem) {
+    background: url("../assets/crew/background-crew-tablet.jpg") no-repeat
+      center center/cover;
+    background-attachment: fixed;
+  }
+
+  @media screen and (max-width: 48rem) {
+    background: url("../assets/crew/background-crew-mobile.jpg") no-repeat
+      center center/cover;
+    background-attachment: fixed;
+  }
+}
+
+#mainContainerCrew {
+  display: block;
+  width: 75%;
+  margin: 4.6875rem auto 0;
+  position: relative;
+
+  @media screen and (max-width: 75rem) {
+    width: 85%;
+  }
+
+  @media screen and (max-width: 48rem) {
+    width: 90%;
+    margin-top: 3.125rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: $headings;
+    text-transform: uppercase;
+    animation-duration: 1.2s;
+
+    @media screen and (max-width: 48rem) {
+      font-size: 1.5rem;
+      margin-top: -1.5625rem;
+    }
+
+    @media screen and (max-width: 36rem) {
+      font-size: 1.125rem;
+    }
+
+    .mainContainerCrew__crewMemberNum {
+      color: $numbers;
+      display: inline-block;
+      margin-right: 0.4688rem;
+    }
+  }
+
+  .mainContainerCrew__wrapper {
+    display: flex;
+    align-items: flex-start;
+
+    .mainContainerCrew__content {
+      margin-top: 7.8125rem;
+
+      @media screen and (max-width: 48rem) {
+        margin-top: 3.125rem;
+        text-align: center;
+      }
+
+      .mainContainerCrew__position {
+        display: block;
+        color: $numbers;
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 0.3125rem;
+        margin-bottom: 0.625rem;
+        animation-duration: 1.2s;
+
+        @media screen and (max-width: 48rem) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .mainContainerCrew__name {
+        color: $headings;
+        text-transform: uppercase;
+        font-size: 4rem;
+        letter-spacing: 0.3125rem;
+        margin-bottom: 1.5625rem;
+        animation-duration: 1.2s;
+
+        @media screen and (max-width: 75rem) {
+          font-size: 3rem;
+        }
+
+        @media screen and (max-width: 48rem) {
+          font-size: 3rem;
+        }
+
+        @media screen and (max-width: 36rem) {
+          font-size: 2rem;
+        }
+      }
+
+      .mainContainerCrew__description {
+        color: $text;
+        font-size: 1.25rem;
+        width: 37.5%;
+        animation-duration: 1.2s;
+
+        @media screen and (max-width: 48rem) {
+          width: 100%;
+          font-size: 1.125rem;
+        }
+
+        @media screen and (max-width: 36rem) {
+          font-size: 1rem;
+        }
+      }
+
+      .mainContainerCrew__slider {
+        display: flex;
+        align-items: center;
+        gap: 0.9375rem;
+        position: absolute;
+        bottom: -20%;
+        animation-duration: 1.2s;
+
+        @media screen and (max-width: 48rem) {
+          bottom: -22.5%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        div {
+          width: 1.25rem;
+          height: 1.25rem;
+          background: $numbers;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            background: $text;
+          }
+
+          &.active-crew {
+            background: $text;
+          }
+        }
+      }
+    }
+  }
+}

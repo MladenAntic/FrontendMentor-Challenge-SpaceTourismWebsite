@@ -1,0 +1,211 @@
+#backgroundHome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: url("../assets/home/background-home-desktop.jpg") no-repeat
+  center center/cover;
+  background-attachment: fixed;
+  z-index: -10;
+
+  @media screen and (max-width: 62rem) {
+    background: url("../assets/home/background-home-tablet.jpg") no-repeat
+      center center/cover;
+    background-attachment: fixed;
+  }
+
+  @media screen and (max-width: 48rem) {
+    background: url("../assets/home/background-home-mobile.jpg") no-repeat
+      center center/cover;
+    background-attachment: fixed;
+  }
+}
+
+#mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12.5rem;
+
+  @media screen and (max-width: 75rem) {
+    margin-top: 9.375rem;
+  }
+
+  @media screen and (max-width: 62rem) {
+    flex-direction: column;
+    margin-top: 9.375rem;
+  }
+
+  @media screen and (max-width: 48rem) {
+    flex-direction: column;
+    margin-top: 7.0313rem;
+  }
+
+  @media screen and (max-width: 36rem) {
+    margin-top: 4.6875rem;
+  }
+
+  .mainContainer__content {
+    width: 62.5%;
+
+    @media screen and (max-width: 62rem) {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 48rem) {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 48rem) {
+      width: 80%;
+      text-align: center;
+      margin: auto;
+    }
+
+    span {
+      text-transform: uppercase;
+      color: $headings;
+      font-size: 2rem;
+
+      @media screen and (max-width: 36rem) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .mainContainer__title,
+    .mainContainer__description {
+      color: $text;
+    }
+
+    .mainContainer__title {
+      text-transform: uppercase;
+      font-size: 10rem;
+      margin-bottom: 0.625rem;
+      letter-spacing: 0.9375rem;
+
+      @media screen and (max-width: 36rem) {
+        font-size: 6rem;
+      }
+    }
+
+    .mainContainer__description {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      width: 45%;
+
+      @media screen and (max-width: 75rem) {
+        width: 60%;
+      }
+
+      @media screen and (max-width: 62rem) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 48rem) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 36rem) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .mainContainer__exploreBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: $main-bg;
+    letter-spacing: 0.3125rem;
+    background: $text;
+    width: 12.5rem;
+    height: 12.5rem;
+    margin-top: 6.25rem;
+    border-radius: 50%;
+    position: relative;
+    transition: 0.5s ease-in-out;
+
+    @media screen and (max-width: 62rem) {
+      width: 10.9375rem;
+      height: 10.9375rem;
+      font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 48rem) {
+      width: 9.375rem;
+      height: 9.375rem;
+      font-size: 1.25rem;
+    }
+
+    @media screen and (max-width: 36rem) {
+      width: 6.25rem;
+      height: 6.25rem;
+      font-size: 1rem;
+    }
+
+    &:hover {
+      font-size: 2.5rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      left: -30%;
+      width: 160%;
+      height: 160%;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      z-index: -1;
+
+      -webkit-animation: scale-in-center 0.5s
+        cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+      display: none;
+    }
+
+    @-webkit-keyframes scale-in-center {
+      from {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+      }
+
+      to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes scale-in-center {
+      from {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+      }
+
+      to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      &::before {
+        display: block;
+      }
+    }
+  }
+}

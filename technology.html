@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Tourism Website | Technology</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <section id="backgroundTech"></section>
+    <header id="header">
+      <img src="assets/shared/logo.svg" alt="Logo" />
+      <div class="header__line"></div>
+      <nav class="header__navigation">
+        <ul>
+          <li>
+            <a href="index.html">
+              <span class="header__pageNumber">00</span> Home
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+          <li>
+            <a href="destination.html">
+              <span class="header__pageNumber">01</span> Destination
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+          <li>
+            <a href="crew.html">
+              <span class="header__pageNumber">02</span> Crew
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+          <li class="active">
+            <a href="technology.html">
+              <span class="header__pageNumber">03</span> Technology
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+        </ul>
+      </nav>
+      <!-- Hamburger Icon -->
+      <button id="menu-btn" class="header__toggleMenu">
+        <span class="header__topBar bar"></span>
+        <span class="header__middleBar bar"></span>
+        <span class="header__bottomBar bar"></span>
+      </button>
+    </header>
+
+    <main id="mainContainerTech">
+      <h2 class="animate__animated animate__fadeIn">
+        <span class="mainContainerTech__number">03</span> Space Launch 101
+      </h2>
+
+      <div class="mainContainerTech__wrapper">
+        <div class="mainContainerTech__steps animate__animated animate__fadeIn">
+          <div class="active-technology">1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <div
+          class="mainContainerTech__content animate__animated animate__bounceInDown"
+        >
+          <span class="mainContainerTech__terminology">The Terminology...</span>
+          <h3 class="mainContainerTech__name">Launch Vehicle</h3>
+          <p class="mainContainerTech__description">
+            A launch vehicle or carrier rocket is a rocket-propelled vehicle
+            used to carry a payload from Earth's surface to space, usually to
+            Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful
+            in operation. Standing 150 metres tall, it's quite an awe-inspiring
+            sight on the launch pad!
+          </p>
+        </div>
+        <img
+          src="assets/technology/image-launch-vehicle-portrait.jpg"
+          id="technologyImg"
+          class="animate__animated animate__bounceInUp"
+          alt="Technology Image"
+        />
+      </div>
+    </main>
+    <script src="js/header.js"></script>
+    <script src="js/technology.js"></script>
+  </body>
+</html>

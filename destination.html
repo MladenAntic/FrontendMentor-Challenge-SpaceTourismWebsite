@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Tourism Website | Destinations</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <section id="backgroundDest"></section>
+    <header id="header">
+      <img src="assets/shared/logo.svg" alt="Logo" />
+      <div class="header__line"></div>
+      <nav class="header__navigation">
+        <ul>
+          <li>
+            <a href="index.html">
+              <span class="header__pageNumber">00</span> Home
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+          <li class="active">
+            <a href="destination.html">
+              <span class="header__pageNumber">01</span> Destination
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+          <li>
+            <a href="crew.html">
+              <span class="header__pageNumber">02</span> Crew
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+          <li>
+            <a href="technology.html">
+              <span class="header__pageNumber">03</span> Technology
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+        </ul>
+      </nav>
+      <!-- Hamburger Icon -->
+      <button id="menu-btn" class="header__toggleMenu">
+        <span class="header__topBar bar"></span>
+        <span class="header__middleBar bar"></span>
+        <span class="header__bottomBar bar"></span>
+      </button>
+    </header>
+
+    <main id="mainContainerDest">
+      <h2 class="animate__animated animate__fadeIn">
+        <span class="mainContainerDest__destinationNumber">01</span> Pick Your
+        Destination
+      </h2>
+      <div class="mainContainerDest__wrapper">
+        <img
+          src="assets/destination/image-moon.png"
+          class="animate__animated animate__fadeInDown"
+          alt="Image Moon"
+        />
+
+        <div
+          class="mainContainerDest__content animate__animated animate__fadeInDown"
+        >
+          <ul class="mainContainerDest__destinations">
+            <li class="active-destination">
+              Moon
+              <span class="mainContainerDest__highlightDestination"></span>
+            </li>
+            <li>
+              Mars
+              <span class="mainContainerDest__highlightDestination"></span>
+            </li>
+            <li>
+              Europa
+              <span class="mainContainerDest__highlightDestination"></span>
+            </li>
+            <li>
+              Titan
+              <span class="mainContainerDest__highlightDestination"></span>
+            </li>
+          </ul>
+          <h3>Moon</h3>
+          <p>
+            See our planet as you’ve never seen it before. A perfect relaxing
+            trip away to help regain perspective and come back refreshed. While
+            you’re there, take in some history by visiting the Luna 2 and Apollo
+            11 landing sites.
+          </p>
+          <div class="mainContainerDest__divider"></div>
+          <div class="mainContainerDest__info">
+            <div class="mainContainerDest__distance">
+              <h5>Avg. Distance</h5>
+              <span>384,400 Km</span>
+            </div>
+
+            <div class="mainContainerDest__time">
+              <h5>Est. Travel Time</h5>
+              <span>3 Days</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/header.js"></script>
+    <script src="js/destination.js"></script>
+  </body>
+</html>

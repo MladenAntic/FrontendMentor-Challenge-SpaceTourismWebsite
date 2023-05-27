@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Tourism Website | Crew</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <section id="backgroundCrew"></section>
+    <img
+      src="assets/crew/image-douglas-hurley.png"
+      id="crewMemberImg"
+      class="animate__animated animate__bounceInUp"
+      alt="Crew Member Image"
+    />
+    <header id="header">
+      <img src="assets/shared/logo.svg" alt="Logo" />
+      <div class="header__line"></div>
+      <nav class="header__navigation">
+        <ul>
+          <li>
+            <a href="index.html">
+              <span class="header__pageNumber">00</span> Home
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+          <li>
+            <a href="destination.html">
+              <span class="header__pageNumber">01</span> Destination
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+          <li class="active">
+            <a href="crew.html">
+              <span class="header__pageNumber">02</span> Crew
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+          <li>
+            <a href="technology.html">
+              <span class="header__pageNumber">03</span> Technology
+            </a>
+            <span class="header__highlightLink"></span>
+          </li>
+        </ul>
+      </nav>
+      <!-- Hamburger Icon -->
+      <button id="menu-btn" class="header__toggleMenu">
+        <span class="header__topBar bar"></span>
+        <span class="header__middleBar bar"></span>
+        <span class="header__bottomBar bar"></span>
+      </button>
+    </header>
+
+    <main id="mainContainerCrew">
+      <h2 class="animate__animated animate__fadeIn">
+        <span class="mainContainerCrew__crewMemberNum">01</span> Meet Your Crew
+      </h2>
+
+      <div class="mainContainerCrew__wrapper">
+        <div class="mainContainerCrew__content">
+          <span
+            class="mainContainerCrew__position animate__animated animate__bounceInDown"
+            >Commander</span
+          >
+          <h3
+            class="mainContainerCrew__name animate__animated animate__bounceInDown"
+          >
+            Douglas Hurley
+          </h3>
+          <p
+            class="mainContainerCrew__description animate__animated animate__bounceInDown"
+          >
+            Douglas Gerald Hurley is an American engineer, former Marine Corps
+            pilot and former NASA astronaut. He launched into space for the
+            third time as commander of Crew Dragon Demo-2.
+          </p>
+          <div
+            class="mainContainerCrew__slider animate__animated animate__fadeIn"
+          >
+            <div class="active-crew"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/header.js"></script>
+    <script src="js/crew.js"></script>
+  </body>
+</html>
