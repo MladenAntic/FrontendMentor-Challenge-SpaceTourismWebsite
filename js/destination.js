@@ -19,18 +19,18 @@ const destinationDistance = document.querySelector(
 const destinationTime = document.querySelector(".mainContainerDest__time span");
 
 let http = new XMLHttpRequest();
-http.open("get", "destinations.json", true);
+http.open("get", "../data/destinations.json", true);
 http.send();
 http.onload = function () {
   if (this.readyState == 4 && this.status == 200) {
-    let data = JSON.parse(this.responseText);
+    let dataDest = JSON.parse(this.responseText);
     for (let i = 0; i < destinations.length; i++) {
       destinations[i].addEventListener("click", () => {
-        destinationImage.src = `${data.destinations[i].images.png}`;
-        destinationTitle.innerText = `${data.destinations[i].name}`;
-        destinationDescription.innerText = `${data.destinations[i].description}`;
-        destinationDistance.innerText = `${data.destinations[i].distance}`;
-        destinationTime.innerText = `${data.destinations[i].travel}`;
+        destinationImage.src = `${dataDest.destinations[i].images.png}`;
+        destinationTitle.innerText = `${dataDest.destinations[i].name}`;
+        destinationDescription.innerText = `${dataDest.destinations[i].description}`;
+        destinationDistance.innerText = `${dataDest.destinations[i].distance}`;
+        destinationTime.innerText = `${dataDest.destinations[i].travel}`;
 
         animateContentDest();
       });

@@ -20,22 +20,22 @@ changeFirstImg();
 window.addEventListener("resize", changeFirstImg);
 
 let http = new XMLHttpRequest();
-http.open("get", "technology.json", true);
+http.open("get", "../data/technology.json", true);
 http.send();
 http.onload = function () {
   if (this.readyState == 4 && this.status == 200) {
-    let data = JSON.parse(this.responseText);
+    let dataTech = JSON.parse(this.responseText);
     for (let i = 0; i < steps.length; i++) {
       function changeImg() {
         if (window.innerWidth <= 992) {
-          technologyImage.src = `${data.technology[i].images.landscape}`;
+          technologyImage.src = `${dataTech.technology[i].images.landscape}`;
         } else if (window.innerWidth > 992) {
-          technologyImage.src = `${data.technology[i].images.portrait}`;
+          technologyImage.src = `${dataTech.technology[i].images.portrait}`;
         }
       }
       steps[i].addEventListener("click", () => {
-        technologyName.innerText = `${data.technology[i].name}`;
-        technologyDescription.innerText = `${data.technology[i].description}`;
+        technologyName.innerText = `${dataTech.technology[i].name}`;
+        technologyDescription.innerText = `${dataTech.technology[i].description}`;
 
         changeImg();
         window.addEventListener("resize", changeImg);
