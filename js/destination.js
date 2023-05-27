@@ -18,23 +18,19 @@ const destinationDistance = document.querySelector(
 );
 const destinationTime = document.querySelector(".mainContainerDest__time span");
 
-import data from '../data/destinations.json' assert { type: 'json' };
+import data from "../data/destinations.json" assert { type: "json" };
 
-fetch("../data/destinations.json")
-  .then((res) => res.json())
-  .then((data) => {
-    for (let i = 0; i < destinations.length; i++) {
-      destinations[i].addEventListener("click", () => {
-        destinationImage.src = `${data.destinations[i].images.png}`;
-        destinationTitle.innerText = `${data.destinations[i].name}`;
-        destinationDescription.innerText = `${data.destinations[i].description}`;
-        destinationDistance.innerText = `${data.destinations[i].distance}`;
-        destinationTime.innerText = `${data.destinations[i].travel}`;
+for (let i = 0; i < destinations.length; i++) {
+  destinations[i].addEventListener("click", () => {
+    destinationImage.src = `${data.destinations[i].images.png}`;
+    destinationTitle.innerText = `${data.destinations[i].name}`;
+    destinationDescription.innerText = `${data.destinations[i].description}`;
+    destinationDistance.innerText = `${data.destinations[i].distance}`;
+    destinationTime.innerText = `${data.destinations[i].travel}`;
 
-        animateContentDest();
-      });
-    }
+    animateContentDest();
   });
+}
 
 function animateContentDest() {
   destinationNumber.className = "mainContainerDest__destinationNumber";

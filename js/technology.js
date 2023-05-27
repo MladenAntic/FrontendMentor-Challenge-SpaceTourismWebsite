@@ -15,34 +15,30 @@ function changeFirstImg() {
   }
 }
 
-changeFirstImg()
+changeFirstImg();
 
 window.addEventListener("resize", changeFirstImg);
 
-import data from '../data/technology.json' assert { type: 'json' };
+import data from "../data/technology.json" assert { type: "json" };
 
-fetch("../data/technology.json")
-  .then((res) => res.json())
-  .then((data) => {
-    for (let i = 0; i < steps.length; i++) {
-      function changeImg() {
-        if (window.innerWidth <= 992) {
-          technologyImage.src = `${data.technology[i].images.landscape}`;
-        } else if (window.innerWidth > 992) {
-          technologyImage.src = `${data.technology[i].images.portrait}`;
-        }
-      }
-      steps[i].addEventListener("click", () => {
-        technologyName.innerText = `${data.technology[i].name}`;
-        technologyDescription.innerText = `${data.technology[i].description}`;
-
-        changeImg();
-        window.addEventListener("resize", changeImg);
-
-        animateContentTech();
-      });
+for (let i = 0; i < steps.length; i++) {
+  function changeImg() {
+    if (window.innerWidth <= 992) {
+      technologyImage.src = `${data.technology[i].images.landscape}`;
+    } else if (window.innerWidth > 992) {
+      technologyImage.src = `${data.technology[i].images.portrait}`;
     }
+  }
+  steps[i].addEventListener("click", () => {
+    technologyName.innerText = `${data.technology[i].name}`;
+    technologyDescription.innerText = `${data.technology[i].description}`;
+
+    changeImg();
+    window.addEventListener("resize", changeImg);
+
+    animateContentTech();
   });
+}
 
 function animateContentTech() {
   technologyName.className = "mainContainerTech__name";
