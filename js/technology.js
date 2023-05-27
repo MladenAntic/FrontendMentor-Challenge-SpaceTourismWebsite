@@ -19,26 +19,32 @@ changeFirstImg();
 
 window.addEventListener("resize", changeFirstImg);
 
-import data from "../data/technology.json" assert { type: "json" };
+let http = new XMLHttpRequest();
+http.open("get", "../data/technology.json", true);
+http.send();
+http.onload = function () {
+  if (this.readyState == 4 && this.status == 200) {
+    let data = JSON.parse(this.responseText);
+    for (let i = 0; i < steps.length; i++) {
+      function changeImg() {
+        if (window.innerWidth <= 992) {
+          technologyImage.src = `${data.technology[i].images.landscape}`;
+        } else if (window.innerWidth > 992) {
+          technologyImage.src = `${data.technology[i].images.portrait}`;
+        }
+      }
+      steps[i].addEventListener("click", () => {
+        technologyName.innerText = `${data.technology[i].name}`;
+        technologyDescription.innerText = `${data.technology[i].description}`;
 
-for (let i = 0; i < steps.length; i++) {
-  function changeImg() {
-    if (window.innerWidth <= 992) {
-      technologyImage.src = `${data.technology[i].images.landscape}`;
-    } else if (window.innerWidth > 992) {
-      technologyImage.src = `${data.technology[i].images.portrait}`;
+        changeImg();
+        window.addEventListener("resize", changeImg);
+
+        animateContentTech();
+      });
     }
   }
-  steps[i].addEventListener("click", () => {
-    technologyName.innerText = `${data.technology[i].name}`;
-    technologyDescription.innerText = `${data.technology[i].description}`;
-
-    changeImg();
-    window.addEventListener("resize", changeImg);
-
-    animateContentTech();
-  });
-}
+};
 
 function animateContentTech() {
   technologyName.className = "mainContainerTech__name";
